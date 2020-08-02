@@ -253,7 +253,7 @@ function getAllCampaigns(){
 ########################################################################################################################
 function getList($listIdArray){
 
-    $userToken = "Basic dGdhcnlhZXZhQGFtZXJpY2FubWVkaWNhbGNvbW0uY29tOk9sZWNoa2EwNA==";
+    $userToken = "";
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
@@ -289,7 +289,7 @@ function getList($listIdArray){
 ########################################################################################################################
 function user_demo($userId, $fieldID=null){
 
-    $userToken = "Basic dGdhcnlhZXZhQGFtZXJpY2FubWVkaWNhbGNvbW0uY29tOk9sZWNoa2EwNA==";
+    $userToken = "";
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
@@ -328,14 +328,14 @@ function getPDL($mailingID) {
     //echo "getPLD triggered with mailingID: ".$mailingID;
 
     $access_token = getToken();
-    $username = 'tgaryaeva@americanmedicalcomm.com';
-    $password = 'Olechka04';
-    $userToken = "Basic dGdhcnlhZXZhQGFtZXJpY2FubWVkaWNhbGNvbW0uY29tOk9sZWNoa2EwNA==";
+    $username = '';
+    $password = '';
+    $userToken = "";
 
     $curl = curl_init();
     // this fetches specific mailing with OPEN type
     curl_setopt_array($curl, array(
-        CURLOPT_URL => 'https://login.postup.com/amyhft/ExternalDownload.do?siteID=33CF394E-2D04-4257-8BBD-EE0B41E3908F&mailingID=' . $mailingID . '&type=OPEN&user=' . $username . '&token='.$access_token,
+        CURLOPT_URL => 'https://login.postup.com/amyhft/ExternalDownload.do?siteID=' . $mailingID . '&type=OPEN&user=' . $username . '&token='.$access_token,
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
